@@ -28,6 +28,11 @@ function postAssignment(req, res){
     assignment.nom = req.body.nom;
     assignment.dateDeRendu = req.body.dateDeRendu;
     assignment.rendu = req.body.rendu;
+    assignment.prof = req.body.prof;
+    assignment.matiere = req.body.matiere;
+    assignment.description = req.body.description;
+    assignment.picture = req.body.picture;
+    assignment.note = req.body.note;
 
     console.log("POST assignment reçu :");
     console.log(assignment)
@@ -67,6 +72,7 @@ function deleteAssignment(req, res) {
         res.json({message: `${assignment.nom} deleted`});
     })
 }
+
 
 
 

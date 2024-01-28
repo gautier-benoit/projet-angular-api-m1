@@ -2,6 +2,7 @@ let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
 let assignment = require('./routes/assignments');
+let matiere = require('./routes/matieres');
 let login = require('./routes/login');
 
 let mongoose = require('mongoose');
@@ -60,6 +61,9 @@ app.route(prefix + '/login')
 
 app.route(prefix + '/register')
   .post(login.postRegister);
+
+app.route(prefix + '/matieres')
+  .get(matiere.getMatieres);
 
 // On démarre le serveur
 app.listen(port, "0.0.0.0");
